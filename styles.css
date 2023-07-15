@@ -1,73 +1,182 @@
-body{
-    background-color:#FCEDDA;
+:root{
+    --primaryColor:  #FCEDDA;
+    --secondaryColor: #2F3C7E;
+    --tertiaryColor: #705efc;
 }
 
-
-*{
-    margin: 0;
+* {
+    margin:0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    
 }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
+body {
     width: 100%;
-    padding:20px 100px;
-    background: #2F3C7E;
+    height: auto;
+}
+
+
+.navbar {
+    width:100%;
+    height: 100px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top:0;
+    left:0;
+    padding: 1rem 2.5rem;
+    z-index: 1;
 }
 
-.logo{
-    font-size: 2em;
-    font-family: "sans serif";
-    color:#FCEDDA;
-    margin-top: auto;
-
+.navbar-menu{
+    margin-top: 10px;
+    margin-left: 60%;
 }
 
-.navigation a{
+.navbar a{
     position:relative;
     font-size: 1.1em;
-    color:#FCEDDA;
+    color:var(--secondaryColor);
     text-decoration:none;
     font-weight: 500;
     margin-left: 40px;
     margin-top: auto;
 }
 
-.navigation a::after {
+.navbar a:not(.navbar-logo)::after {
     content: '';
     position: absolute;
     left: 0;
     width: 100%;
     height: 3px;
-    background: #FCEDDA; 
+    background: var(--secondaryColor); 
     border-radius: 5px;
     bottom: -6px;
     transform: scaleX(0);
-    transition: transform.5s;
-}
-
-.navigation a:hover::after {
+    transition: transform 0.5s;
+  }
+  
+  .navbar a:not(.navbar-logo):hover::after {
     transform: scaleX(1);
+  }
 
+.navbar-logo > a{
+    letter-spacing: 2.5;
+    text-decoration: none;
+    color: var(--secondaryColor);
 }
 
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondaryColor);
+  }
+  
+  .navbar-logo img {
+    width: 95px; /* Adjust the width to increase or decrease the logo size */
+    height: auto; /* Maintains the aspect ratio of the logo */
+    margin-right: 10px; /* Optional spacing between the logo and text */
+    margin-top: -65;
+  }
+
+.menu-toggle {
+    display: block;
+}
+.menu-toggle .bar{
+    width: 15px;
+    height: 2px;
+    margin: 3px auto;
+    transition: all 0.3 ease-in-out;
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+}
+
+/* Log-in for user */
 .btnLogin-popup{
     width:130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #FCEDDA;
+    border: 2px solid var(--secondaryColor);
     outline: none;
     border-radius: 6px;
     font-size: 1.1em;
     cursor: point;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 45px;
     transition: .5s;
-    color: #FCEDDA
-
+    color: var(--secondaryColor);
+    cursor: pointer;
 }
+
+.btnLogin-popup:hover{
+    background: var(--secondaryColor);
+    color:var(--primaryColor);
+}
+
+
+
+  header {
+    height: 30%;
+    background-color: var(--primaryColor);
+    position: relative;
+    overflow: hidden;
+  }
+  
+
+
+  /* Creates the wave animation */
+  #shape {
+    position: absolute;
+    left: 0;
+    bottom: -2vw;
+  }
+  img:not(#shape) {
+    position: absolute;
+    left: 0;
+  }
+  header img:nth-child(1) {
+    opacity: 0.4;
+    bottom: -0.1vw;
+    animation: move-1 5s infinite;
+  }
+  @keyframes move-1 {
+    50% {
+      transform: translateY(15px);
+    }
+  }
+  header img:nth-child(2) {
+    opacity: 0.3;
+    bottom: 0.5vw;
+    animation: move-2 4s infinite;
+  }
+  @keyframes move-2 {
+    50% {
+      transform: translateY(35px);
+    }
+  }
+  header img:nth-child(3) {
+    bottom: 0.3vw;
+    opacity: 0.2;
+    animation: move-3 3.5s infinite;
+  }
+  @keyframes move-3 {
+    50% {
+      transform: translateY(25px);
+    }
+  }
+  header img:nth-child(4) {
+    bottom: 0.1vw;
+    opacity: 0.3;
+    animation: move-4 3s infinite;
+  }
+  @keyframes move-4 {
+    50% {
+      transform: translateY(20px);
+    }
+  }
+ 
+
