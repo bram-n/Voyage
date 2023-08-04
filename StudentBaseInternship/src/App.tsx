@@ -1,18 +1,19 @@
-import "./styles.css";
-import Wavevify from "./Aesthetics/WavesFromWavify/Wave";
-import NavBar2 from "./Components/NavBar2";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
+import Internship from "./Pages/Internship";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <NavBar2/>
-      <h1 className="text-center mt-4">Welcome to our website</h1>
-
-      <footer>
-        <p>&copy; 2023 Your Website. All rights reserved.</p>
-      </footer>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} / >
+        <Route path = "/internship" element= {<Internship/>} />
+        <Route path="*" element={<h1>404 Not Found</h1>}></Route>
+      </Routes>
     </>
   );
 }

@@ -1,25 +1,20 @@
+import React from 'react'
+import {Navbar, Nav, Container}  from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+// NavBar with routing applied
 
-import logoSb2 from "../assets/Sb-2.png"
-function NavBar() {
-    return (  
-        <nav className="navbar">
-        <a className="navbar-logo" href="">
-          <img src={logoSb2} alt="Logo" />
-        </a>
-        <div className="navbar-menu">
-          <a href="#Home">Home</a>
-          <a href="#internships">Internships</a>
-          <button className="btnLogin-popup">Login</button>
-        </div>
-        <div className="menu-toggle">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
-       
-      </nav>
-    );
+export default function NavBar() {
+  return (
+    <Navbar bg="light" data-bs-theme="light">
+        <Container>
+          <Navbar.Brand><Link to="/">Stundent Internship</Link></Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link><Link to = "/">Home</Link></Nav.Link>
+            <Nav.Link><Link to="/Internship">Internship</Link></Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+  )
 }
 
-export default NavBar;
 
