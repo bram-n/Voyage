@@ -1,9 +1,8 @@
 import React from 'react'
+import Scroll from '../Components/Scroll'
 
 export default function Internship() {
   return (
-    <h1>
-      Internship
-    </h1>
+    <Scroll/>
   )
 }
