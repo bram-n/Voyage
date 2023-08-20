@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDCWMePGG27ImAlypX_1nfcYdgzxiE2DVA",
@@ -9,10 +11,11 @@ const firebaseConfig = {
   storageBucket: "student-base-fc2e1.appspot.com",
   messagingSenderId: "1038844186065",
   appId: "1:1038844186065:web:cff4a36e85a801fa5ae4f0",
-  measurementId: "G-79RKFQWNF0"
+  measurementId: "G-79RKFQWNF0",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+
+firebase.initializeApp(firebaseConfig);
+
+export const auth = firebase.auth();
 

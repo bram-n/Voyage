@@ -1,19 +1,22 @@
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Internship from "./Pages/Internship";
+import SignUp from "./Pages/SignUp";
 import { Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./Contexts/AuthContext";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} / >
-        <Route path = "/internship" element= {<Internship/>} />
-        <Route path="*" element={<h1>404 Not Found</h1>}></Route>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Routes>
+      </AuthProvider>
     </>
   );
 }
