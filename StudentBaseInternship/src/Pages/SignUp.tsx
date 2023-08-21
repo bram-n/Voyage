@@ -1,23 +1,37 @@
 import React, { useState } from "react";
-import { Form, Button, Container, Card } from "react-bootstrap";
+import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUpForm() {
   // States
+  const [currentUser, setCurrentUser] = useState("")
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const navigate = useNavigate()
 
   // Auth Context
   const { signup } = useAuth();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading) { 
+      console.error("Loading, dont press button repeatedly")
+      return 
+    }
+    
     try {
+      setLoading(true)
       await signup(email, password);
       console.log("Sign up successful");
+      navigate("/")
     } catch (err) {
+      setError((err as Error).message)
       console.error("Error signing up:", (err as Error).message);
     }
+    setLoading(false)
   };
 
   return (
@@ -27,6 +41,7 @@ export default function SignUpForm() {
         <Card.Header className="text-center">
           <h1>Sign Up</h1>
         </Card.Header>
+        {error && <Alert variant="danger">{error}</Alert>}
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username" className="m-3">

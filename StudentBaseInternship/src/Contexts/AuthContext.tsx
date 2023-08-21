@@ -1,10 +1,9 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { auth } from "../config/firebase"
-import { initializeApp } from "firebase/app";
-import { getAuth} from "firebase/auth";
 
 // Define the shape of the context value
 interface AuthContextValue {
+  currentUser: firebase.default.User | null;
   authenticated: boolean;
   signup: (email: string, password:string) =>  Promise<any>;
   login: () =>  void;
@@ -26,7 +25,11 @@ export function useAuth() {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export function AuthProvider({ children }: AuthProviderProps) {
+
+  // States
   const [authenticated, setAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState<firebase.default.User | null>(null)
+  const [loading, setLoading] = useState(false)
 
   function signup(email: string, password: string) {
     return auth.createUserWithEmailAndPassword(email, password)
@@ -38,8 +41,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
   function logout() {
 
   }
+  
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+      
+    });
+
+    return unsubscribe;
+  }, []);
 
   const authContextValue: AuthContextValue = {
+    currentUser,
     authenticated,
     signup,
     login,
