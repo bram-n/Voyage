@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function SignUpForm() {
   // States
@@ -38,10 +38,13 @@ export default function SignUpForm() {
     <Container style={{ width: "50%" }}>
       <br />
       <Card>
+        {/* Sign Up button*/ }
         <Card.Header className="text-center">
           <h1>Sign Up</h1>
         </Card.Header>
+        {/* Error  Display*/}
         {error && <Alert variant="danger">{error}</Alert>}
+
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username" className="m-3">
@@ -54,7 +57,6 @@ export default function SignUpForm() {
             </Form.Group>
 
             <Form.Group controlId="email" className="m-3">
-              {/* <Form.Label>Email address</Form.Label> */}
               <Form.Control
                 type="email"
                 placeholder="Email"
@@ -64,7 +66,6 @@ export default function SignUpForm() {
             </Form.Group>
 
             <Form.Group controlId="password" className="m-3">
-              {/* <Form.Label>Password</Form.Label> */}
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -72,11 +73,12 @@ export default function SignUpForm() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-
             <div className="text-center">
               <Button variant="primary" type="submit" style={{ width: "40%" }}>
                 <h5>Submit</h5>
               </Button>
+              <br/>
+              <Link to= "/login" style={{textDecoration: 'none'}}>Already has an account ?</Link>
             </div>
           </Form>
         </Card.Body>

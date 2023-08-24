@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function LoginForm() {
   // States
@@ -77,6 +77,8 @@ export default function LoginForm() {
               <Button variant="primary" type="submit" style={{ width: "40%" }}>
                 <h5>Submit</h5>
               </Button>
+              <br/>
+              <Link to= "/signup" style={{textDecoration: 'none'}}>Have not registered ?</Link>
             </div>
           </Form>
         </Card.Body>
