@@ -5,6 +5,7 @@ import Internship from "./Pages/Internship";
 import SignUp from "./Pages/SignUp";
 import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
+import LogIn from "./Pages/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/internship" element={<Internship />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </AuthProvider>

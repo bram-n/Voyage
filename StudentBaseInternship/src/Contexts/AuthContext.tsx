@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { auth } from "../config/firebase"
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import auth from '../config/firebase';
+import { User } from 'firebase/auth';
+
 
 // Define the shape of the context value
 interface AuthContextValue {
-  currentUser: firebase.default.User | null;
+  currentUser: User | null;
   authenticated: boolean;
   signup: (email: string, password:string) =>  Promise<any>;
-  login: () =>  void;
+  login: (email: string, password:string) =>  Promise<any>;
   logout: () => void;
 }
 
@@ -28,27 +31,23 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // States
   const [authenticated, setAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState<firebase.default.User | null>(null)
+  const [currentUser, setCurrentUser] = useState< User | null>(null)
   const [loading, setLoading] = useState(false)
 
-  function signup(email: string, password: string) {
-    return auth.createUserWithEmailAndPassword(email, password)
-  }
-  function login() {
-    
-  }
+  function signup(email: string, password: string) { return createUserWithEmailAndPassword(auth, email, password) }
+  function login(email: string, password: string) { return signInWithEmailAndPassword(auth, email, password)}
 
   function logout() {
 
   }
   
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user: User | null) => {
       setCurrentUser(user);
       setLoading(false);
       
     });
-
+    
     return unsubscribe;
   }, []);
 
