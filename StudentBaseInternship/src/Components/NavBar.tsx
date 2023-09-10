@@ -10,7 +10,8 @@ export default function NavBar() {
   return (
     <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand>Stundent Internship</Navbar.Brand>
+          <NavLink to="/" className="nav-link">Student Internship</NavLink>
+
           <Nav className="">
             <NavLink to="/internship" className="nav-link">Internship</NavLink>
             { isAuthenticated ? 

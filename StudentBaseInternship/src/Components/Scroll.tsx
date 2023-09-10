@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import '../Aesthetics/ScrollTable.css'; // Import the CSS file
+import leftArrow from '../Aesthetics/leftarrow.svg';
+import rightArrow from '../Aesthetics/rightarrow.svg';
+
 const itemsPerPage = 20;
 
 const ScrollTable = () => {
@@ -58,14 +61,14 @@ const ScrollTable = () => {
         </tbody>
       </table>
       <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          Previous
+        <button onClick={handlePrevPage} disabled={currentPage === 1} className = "toggleButton"><img src={leftArrow} />
+
         </button>
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next
+        <button onClick={handleNextPage} disabled={currentPage === totalPages} className = "toggleButton">
+        <img src={rightArrow} />
         </button>
       </div>
     </div>
