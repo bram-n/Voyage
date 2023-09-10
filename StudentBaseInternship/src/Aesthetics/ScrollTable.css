@@ -1,0 +1,36 @@
+/* ScrollTable.css */
+
+/* Define styles for the container */
+.ScrollTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  /* Define styles for the table */
+  table {
+    border: 1px solid gray;
+    margin: 12px 0;
+    padding: 8px;
+  }
+  
+  /* Define styles for the table header */
+  thead {
+    background-color: grey;
+  }
+  
+  /* Define styles for the table header cells */
+  th {
+    padding: 20px 70px;
+  }
+  
+  /* Define styles for the table rows */
+  tr {
+    padding: 20px;
+  }
+  
+  td{
+    padding: 15px;
+  }
