@@ -7,7 +7,9 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
 import LogIn from "./Pages/Login";
 
+
 function App() {
+  
   return (
     <>
       <AuthProvider>
