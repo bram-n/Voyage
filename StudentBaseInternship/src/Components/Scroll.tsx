@@ -43,15 +43,15 @@ const ScrollTable = () => {
       <table>
         <thead>
           <tr>
-            <th>Company</th>
+            <th className="thead-left">Company</th>
             <th>Job Title</th>
             <th>Estimated Hourly Wage</th>
-            <th>Date Posted</th>
+            <th className ="thead-right">Date Posted</th>
           </tr>
         </thead>
         <tbody>
           {dataSource.map((item) => (
-            <tr key={item.company}>
+            <tr key={item.company}  class="table-row-hover">
               <td>{item.company}</td>
               <td>{item.title}</td>
               <td>{item.wage}</td>

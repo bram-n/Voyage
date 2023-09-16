@@ -1,4 +1,8 @@
 /* ScrollTable.css */
+:root{
+  --primaryColor:  #FCEDDA;
+  --secondaryColor: #2F3C7E;
+}
 
 /* Define styles for the container */
 .ScrollTable {
@@ -7,23 +11,37 @@
     align-items: center;
     text-align: center;
     height: 100vh;
+    background-color: var(--primaryColor);
   }
   
   /* Define styles for the table */
-  table {
+  /* table {
     border: 1px solid gray;
     margin: 12px 0;
     padding: 8px;
-  }
+  } */
   
   /* Define styles for the table header */
   thead {
-    background-color: grey;
+    background-color: 	#e3d5c4;
+    border-radius: 10px;
   }
   
   /* Define styles for the table header cells */
-  th {
-    padding: 20px 70px;
+  th { 
+    padding: 40px 70px;
+  }
+
+
+  /*Styling for the table head to make it curved*/
+  .thead-left{
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+  }
+
+  .thead-right{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
   
   /* Define styles for the table rows */
@@ -39,3 +57,14 @@
     background-color:none;
     border: none;
   }
+
+  .table-row-hover{
+    border-radius: 20px;
+    outline: 2px solid #e3d5c4;
+  }
+
+  .table-row-hover:hover {
+  overflow: hidden; 
+  outline: 2px solid #e3d5c4; /* Add an outline on hover */
+  transition: outline 0.3s ease; /* Add a smooth transition for the outline */
+}
