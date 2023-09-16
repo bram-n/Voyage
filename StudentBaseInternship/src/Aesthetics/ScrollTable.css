@@ -1,7 +1,10 @@
 /* ScrollTable.css */
 :root{
-  --primaryColor:  #FCEDDA;
+  --primaryColor:  #ffe6cc;
   --secondaryColor: #2F3C7E;
+  --tertiaryColor: #FCEDDA;
+  --hoverColor: #f8dcbe;
+  --theadColor: #eccfaf;
 }
 
 /* Define styles for the container */
@@ -10,20 +13,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--primaryColor);
   }
   
   /* Define styles for the table */
-  /* table {
-    border: 1px solid gray;
-    margin: 12px 0;
-    padding: 8px;
-  } */
+  table {
+    border-collapse: separate; /* Ensure that borders are separate */
+    border-spacing: 0 10px;
+  }
   
   /* Define styles for the table header */
   thead {
-    background-color: 	#e3d5c4;
+    background-color: var(--theadColor) ;
     border-radius: 10px;
   }
   
@@ -35,13 +37,13 @@
 
   /*Styling for the table head to make it curved*/
   .thead-left{
-    border-top-left-radius: 20px; 
-    border-bottom-left-radius: 20px; 
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
   }
 
   .thead-right{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   
   /* Define styles for the table rows */
@@ -50,7 +52,7 @@
   }
   
   td{
-    padding: 15px;
+    padding: 17px;
   }
 
   .toggleButton{
@@ -58,13 +60,28 @@
     border: none;
   }
 
-  .table-row-hover{
-    border-radius: 20px;
-    outline: 2px solid #e3d5c4;
-  }
 
-  .table-row-hover:hover {
-  overflow: hidden; 
-  outline: 2px solid #e3d5c4; /* Add an outline on hover */
-  transition: outline 0.3s ease; /* Add a smooth transition for the outline */
+/* Table-row effects for all but table head */
+.table-row-hover {
+  border-radius: 10px;
+  background-color: var(--primaryColor);
+  transition: background-color 0.3s ease;
+  outline: 1px solid var(--hoverColor);
+  cursor: pointer;
 }
+
+.table-row-hover:hover {
+  background-color: var(--hoverColor);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  outline: 1px solid var(--hoverColor);
+}
+
+.table-row-hover:active {
+  background-color: var(--clickedColor);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+
+
