@@ -1,0 +1,30 @@
+@import '../assets/Fonts.css';
+
+
+.yellow-background {
+    background: #FCEDDA;
+}
+
+.text-style {
+    color: #2F3C7E;
+    text-align: center;
+    font-family: Karla;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 6px;
+}
+
+.signup-box-style {
+    border-radius: 8px;
+    border: 2px solid var(--Blue, #2F3C7E);
+    color: #2F3C7E;
+    text-align: center;
+    font-family: Karla;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: auto;
+}
