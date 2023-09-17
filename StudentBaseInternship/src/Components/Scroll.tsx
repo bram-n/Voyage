@@ -61,17 +61,19 @@ const ScrollTable = () => {
         </tbody>
       </table>
       <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1} className = "toggleButton"><img src={leftArrow} />
-
+      <div className="button-container">
+        <button onClick={handlePrevPage} disabled={currentPage === 1} className="toggleLeft">
+          <img src={leftArrow} alt="Previous" />
         </button>
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages} className = "toggleButton">
-        <img src={rightArrow} />
+        <button onClick={handleNextPage} disabled={currentPage === totalPages} className="toggleRight">
+          <img src={rightArrow} alt="Next" />
         </button>
       </div>
     </div>
+  </div>
   );
 };
 
