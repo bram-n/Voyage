@@ -1,28 +1,50 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./Components/NavBar";
-import Home from "./Pages/Home";
-import Internship from "./Pages/Internship";
-import SignUp from "./Pages/SignUp";
-import { Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./Contexts/AuthContext";
-import LogIn from "./Pages/Login";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+const YourComponent = () => {
 
-function App() {
+  interface DataItem {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+  }
+  
+  const [data, setData] = useState<DataItem[] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/fetchData'); // Replace with your server's URL
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    console.log("Run")
+    fetchData();
+  }, []);
+  
+  if (data) {
+    console.log(1)
+  }
+  
   
   return (
-    <>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/internship" element={<Internship />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
-      </AuthProvider>
-    </>
+    <div>
+      {data ? (
+        <div>
+          {/* Render your data here */}
+          {data.map((item: any) => (
+            <div key={item.id}>{item.id}Hello{item.title}</div>
+            
+          ))}
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
   );
-}
+};
 
-export default App;
+export default YourComponent;
