@@ -1,40 +1,80 @@
+// ScrollTable.js
+
 import React, { useEffect, useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import '../Aesthetics/ScrollTable.css'; // Import the CSS file
+import leftArrow from '../Aesthetics/leftarrow.svg';
+import rightArrow from '../Aesthetics/rightarrow.svg';
 
-const style = {
-    border: "1px solid green",
-    margin: 12,
-    padding: 8
+const itemsPerPage = 20;
+
+const ScrollTable = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataSource, setDataSource] = useState([]);
+
+  useEffect(() => {
+    // Generate data for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const newData = Array.from({ length: itemsPerPage }).map((_, index) => ({
+      company: startIndex + index + 1,
+      title: `Data ${startIndex + index + 1}`,
+      date: startIndex + index + 1,
+      wage: startIndex + index + 1,
+    }));
+    setDataSource(newData);
+  }, [currentPage]);
+
+  const totalPages = Math.ceil(200 / itemsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  return (
+    <div className="ScrollTable">
+      <table>
+        <thead>
+          <tr>
+            <th className="thead-left">Company</th>
+            <th>Job Title</th>
+            <th>Estimated Hourly Wage</th>
+            <th className ="thead-right">Date Posted</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataSource.map((item) => (
+            <tr key={item.company}  className="table-row-hover">
+              <td>{item.company}</td>
+              <td>{item.title}</td>
+              <td>{item.wage}</td>
+              <td>{item.date}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="pagination">
+      <div className="button-container">
+        <button onClick={handlePrevPage} disabled={currentPage === 1} className="toggleLeft">
+          <img src={leftArrow} alt="Previous" />
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages} className="toggleRight">
+          <img src={rightArrow} alt="Next" />
+        </button>
+      </div>
+    </div>
+  </div>
+  );
 };
 
-const Scroll = () => {
-    const [hasMore, setHasMore] = useState(true);
-    const [dataSource, setDataSource] = useState(Array.from({ length: 20 }));
-
-    const fetchMoreData = () => {
-        if (dataSource.length < 200) {
-            setTimeout(() => {
-                setDataSource(prevData => prevData.concat(Array.from({ length: 20 })));
-            }, 500);
-        } else {
-            setHasMore(false);
-        }
-    };
-
-    return (
-        <div className="Scroll">
-            <InfiniteScroll
-                dataLength={dataSource.length}
-                next={fetchMoreData}
-                hasMore={hasMore}
-                loader={<p>Loading...</p>}
-            >
-                {dataSource.map((item, index) => (
-                    <div key={index} style={style}> This is a div #{index + 1} inside </div>
-                ))}
-            </InfiniteScroll>
-        </div>
-    );
-};
-
-export default Scroll;
+export default ScrollTable;

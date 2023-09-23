@@ -22,7 +22,6 @@ export default function NavBar() {
           </NavLink>
           <Nav className='nav-right-side-component'>
             <NavLink to="/internship" className="nav-link text-style ">Internship</NavLink>
-
             { isAuthenticated ? 
               // if user logs in
               <>

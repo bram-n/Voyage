@@ -1,0 +1,126 @@
+/* ScrollTable.css */
+:root{
+  --primaryColor:  #ffe6cc;
+  --secondaryColor: #2F3C7E;
+  --hoverColor: #f8dcbe;
+  --theadColor: #eccfaf;
+}
+
+/* Define styles for the container */
+.ScrollTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* height: 100vh; */
+    background-color: var(--primaryColor);
+  }
+  
+  /* Makes the tables rows have seperation between them */
+  table {
+    border-collapse: separate; 
+    border-spacing: 0 10px;
+  }
+  
+  /* Colors table header and rounds border edges */
+  thead {
+    background-color: var(--theadColor) ;
+    border-radius: 10px;
+  }
+  
+  /* Define styles for the table header cells */
+  th { 
+    padding: 40px 70px;
+  }
+
+
+  /*Styling for the table head to make it curved*/
+  .thead-left{
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+  }
+
+  .thead-right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Define styles for the table rows */
+  tr {
+    padding: 20px;
+  }
+  
+  td{
+    padding: 17px;
+  }
+
+/* Button CSS */
+/* Style the left arrow button */
+.toggleLeft {
+  background-color: transparent; 
+  border: none;
+  cursor: pointer; 
+  padding: 0; 
+  margin-right: 10px; 
+  transition: transform 0.3s ease; 
+}
+
+.toggleLeft img {
+  width: 15px; /* Set the width of the left arrow icon */
+}
+
+/* Style the right arrow button */
+.toggleRight {
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0; 
+  margin-left: 10px; 
+  transition: transform 0.3s ease;
+}
+
+.toggleRight img {
+  width: 15px;
+}
+
+/* Add a hover effect to the buttons */
+.toggleLeft:hover,
+.toggleRight:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+}
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+
+
+
+/* Table-row effects for all but table head */
+.table-row-hover {
+  border-radius: 10px;
+  background-color: var(--primaryColor);
+  transition: background-color 0.3s ease;
+  outline: 1px solid var(--hoverColor);
+  cursor: pointer;
+}
+
+.table-row-hover:hover {
+  background-color: var(--hoverColor);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  outline: 1px solid var(--hoverColor);
+}
+
+.table-row-hover:active {
+  background-color: var(--clickedColor);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+
+
+
