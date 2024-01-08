@@ -8,6 +8,7 @@ import imageLogo from "../assets/Sb-2.png";
 // NavBar with routing applied
 
 export default function NavBar() {
+  console.log("nav bar used")
   const { currentUser, logout, isAuthenticated } = useAuth();
   return (
     <Navbar bg="light" data-bs-theme="light" className="yellow-background">
