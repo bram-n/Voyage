@@ -6,13 +6,14 @@ import SignUp from "./Pages/SignUp";
 import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
 import LogIn from "./Pages/Login";
+import JobListings from "./Pages/JobListing";
 
 
 function App() {
   
   return (
     <>
-      <AuthProvider>
+      {/* <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/internship" element={<Internship />} />
@@ -20,7 +21,8 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
-      </AuthProvider>
+      </AuthProvider> */}
+      <JobListings/>
     </>
   );
 }
