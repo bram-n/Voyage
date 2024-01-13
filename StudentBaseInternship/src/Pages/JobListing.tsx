@@ -1,39 +1,55 @@
-// JobListings.tsx
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import ReactPaginate from 'react-paginate';
+import { Container } from 'react-bootstrap';
+import JobCard from '../Components/JobCard'; // Assuming the component is in a separate file
+import DataJSON from '../Data/DataJSON.json'; // Adjust the path accordingly
+import Job from '../Data/JobDataType'; // Import the interface
+import mapJsonToJob from '../Data/MapJsonToJob';
+import { Row, Col, Card } from 'react-bootstrap';
+import './pagination.css'; // Import the CSS file
 
-const JobListings: React.FC = () => {
-  const [jobData, setJobData] = useState<any[]>([]);
+const ItemsPerPage = 4;
 
-  useEffect(() => {
-    const fetchJobData = async () => {
-      try {
-        const response = await axios.get('https://serpapi.com/search?engine=google_jobs_listing&q=barista%20new%20york');
-        setJobData(response.data?.jobs_results || []);
-      } catch (error) {
-        console.error('Error fetching job data:', error);
-      }
-    };
+function PaginatedJobItems() {
+  const [currentPage, setCurrentPage] = useState(0);
 
-    fetchJobData();
-  }, []);
+  const handlePageClick = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+  };
+
+  const startIndex = currentPage * ItemsPerPage;
+  const endIndex = startIndex + ItemsPerPage;
+  const currentData = DataJSON.slice(startIndex, endIndex);
+
+  const pageCount = Math.ceil(DataJSON.length / ItemsPerPage);
 
   return (
-    <div>
-      <h1>Job Listings</h1>
-      <ul>
-        {jobData.map((job, index) => (
-          <li key={index}>
-            <h2>{job.title}</h2>
-            <p>Company: {job.company_name}</p>
-            <p>Location: {job.location}</p>
-            <p>Description: {job.description}</p>
-            {/* Add more details or styling as needed */}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Container>
+      {currentData.map((data, index) => (
+        <JobCard
+          key={index}
+          keyIndex={data['']}
+          company={data['Company Name']}
+          location={data['Location']}
+          jobTitle={data['Job Title']}
+          salary={data['Salary Estimate']}
+          rating={data['Rating']}
+        />
+      ))}
+      <Row className="justify-content-center mt-3">
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel=">"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="<"
+          containerClassName="pagination"
+          activeClassName="active"
+        />
+      </Row>
+    </Container>
   );
-};
+}
 
-export default JobListings;
+export default PaginatedJobItems;
