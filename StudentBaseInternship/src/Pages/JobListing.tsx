@@ -8,62 +8,49 @@ import mapJsonToJob from "../Data/MapJsonToJob";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import "./pagination.css"; // Import the CSS file
 
-const ItemsPerPage = 10;
+const ItemsPerPage = 8;
+
+// ... (previous imports)
 
 function PaginatedJobItems() {
-  /**
-   * State management
-   */
   const [currentPage, setCurrentPage] = useState(0);
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
-  /**
-   * Handle Click when clicking on a page rectangle
-   * @param selectedPage an event
-   */
   const handlePageClick = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
   };
 
-  /**
-   * Handle Search
-   */
   const handleSearch = () => {
-    // Check if keyword or location is not blank
     if (keyword !== "" || location !== "") {
-      // Filter based on the conditions
       const filteredData = DataJSON.filter((data) => {
         const keywordMatch =
           keyword !== undefined &&
           keyword !== "" &&
-          (data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
-            data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
-  
+          (data["Company Name"] !== undefined && data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
+          data["Job Title"] !== undefined && data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
+
         const locationMatch =
           location !== undefined &&
           data["Location"] !== undefined &&
           data["Location"].toLowerCase().includes(location.toLowerCase());
-  
-        return keywordMatch || locationMatch;
+
+        return keywordMatch && locationMatch;
       });
-  
-      // Store the filtered data in state
+
       setFilteredData(filteredData);
     } else {
-      // If both keyword and location are blank, reset the filteredData state
       setFilteredData([]);
     }
   };
-  
-  // Use filteredData for pagination if not empty, otherwise use DataJSON
+
   const dataToPaginate = filteredData.length > 0 ? filteredData : DataJSON;
   const startIndex = currentPage * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
-  const currentData = DataJSON.slice(startIndex, endIndex);
+  const currentData = dataToPaginate.slice(startIndex, endIndex);
 
-  const pageCount = Math.ceil(DataJSON.length / ItemsPerPage);
+  const pageCount = Math.ceil(dataToPaginate.length / ItemsPerPage);
 
   return (
     <Container>
@@ -96,7 +83,7 @@ function PaginatedJobItems() {
           </Button>
         </Col>
       </Row>
-      {filteredData.map((data, index) => (
+      {currentData.map((data, index) => (
         <JobCard
           key={index}
           keyIndex={data[""]}
@@ -107,22 +94,25 @@ function PaginatedJobItems() {
           rating={data["Rating"]}
         />
       ))}
-      <Row>
-        <div className="mt-3 d-flex justify-content-center">
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel="<"
-            containerClassName="pagination"
-            activeClassName="active"
-          />
-        </div>
-      </Row>
+      {pageCount > 1 && ( // Display pagination only if there are more than one page
+        <Row>
+          <div className="mt-3 d-flex justify-content-center">
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel="<"
+              containerClassName="pagination"
+              activeClassName="active"
+            />
+          </div>
+        </Row>
+      )}
     </Container>
   );
 }
 
 export default PaginatedJobItems;
+
