@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
 import LogIn from "./Pages/Login";
 import JobListings from "./Pages/JobListing";
+import Description from "./Pages/Description";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </AuthProvider> */}
-      <JobListings/>
+      {/* <JobListings/> */}
+      <Description/>
     </>
   );
 }

@@ -8,9 +8,10 @@ interface JobCardProps {
   jobTitle: string;
   salary: string;
   rating: string;
+  description : string;
 }
 
-function JobCard({ keyIndex, company, location, jobTitle, salary, rating }: JobCardProps) {
+function JobCard({ keyIndex, company, location, jobTitle, salary, rating, description }: JobCardProps) {
   return (
     <Card>
       <Card.Body>
@@ -19,6 +20,7 @@ function JobCard({ keyIndex, company, location, jobTitle, salary, rating }: JobC
         <Card.Subtitle className="mb-2 text-muted">{jobTitle}</Card.Subtitle>
         <Card.Text>Salary: {salary}</Card.Text>
         <Card.Text>Rating: {rating}</Card.Text>
+        <Card.Text>Job Description: {description}</Card.Text>
       </Card.Body>
     </Card>
   );
