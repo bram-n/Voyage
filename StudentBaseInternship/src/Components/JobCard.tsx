@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 interface JobCardProps {
   keyIndex: number,
@@ -8,11 +9,11 @@ interface JobCardProps {
   jobTitle: string;
   salary: string;
   rating: string;
-  description : string;
 }
 
-function JobCard({ keyIndex, company, location, jobTitle, salary, rating, description }: JobCardProps) {
+function JobCard({ keyIndex, company, location, jobTitle, salary, rating }: JobCardProps) {
   return (
+    <Link to={`/description/${keyIndex}`}>
     <Card>
       <Card.Body>
         <Card.Title>{keyIndex}{". "}{company}</Card.Title>
@@ -20,9 +21,10 @@ function JobCard({ keyIndex, company, location, jobTitle, salary, rating, descri
         <Card.Subtitle className="mb-2 text-muted">{jobTitle}</Card.Subtitle>
         <Card.Text>Salary: {salary}</Card.Text>
         <Card.Text>Rating: {rating}</Card.Text>
-        <Card.Text>Job Description: {description}</Card.Text>
+
       </Card.Body>
     </Card>
+    </Link>
   );
 }
 

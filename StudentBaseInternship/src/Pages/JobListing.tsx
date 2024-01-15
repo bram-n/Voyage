@@ -92,7 +92,6 @@ function PaginatedJobItems() {
           jobTitle={data["Job Title"]}
           salary={data["Salary Estimate"]}
           rating={data["Rating"]}
-          description ={data["Job Description"]}
         />
       ))}
       {pageCount > 1 && ( // Display pagination only if there are more than one page
