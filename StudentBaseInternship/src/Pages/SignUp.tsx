@@ -47,14 +47,14 @@ export default function SignUpForm() {
 
         <Card.Body>
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="username" className="m-3">
+            {/* <Form.Group controlId="username" className="m-3">
               <Form.Control
                 type="text"
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group controlId="email" className="m-3">
               <Form.Control
@@ -74,7 +74,7 @@ export default function SignUpForm() {
               />
             </Form.Group>
             <div className="text-center">
-              <Button variant="primary" type="submit" style={{ width: "40%" }}>
+              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }}>
                 <h5>Submit</h5>
               </Button>
               <br/>

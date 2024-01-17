@@ -8,34 +8,46 @@ import imageLogo from "../assets/Sb-2.png";
 // NavBar with routing applied
 
 export default function NavBar() {
-  console.log("nav bar used")
   const { currentUser, logout, isAuthenticated } = useAuth();
+  // console.log("heoll Im navbar");
+  // console.log(currentUser);
+
   return (
-    <Navbar bg="light" data-bs-theme="light" className="yellow-background">
+    <Navbar
+      bg="light"
+      data-bs-theme="light"
+      className="yellow-background custom-navbar"
+    >
       <Container>
         <NavLink to="/" className="logo-div">
           <img
             src={imageLogo}
             alt="Internship Logo"
             className="image-style"
-            style={{ maxWidth: "100px", maxHeight: "100px" }}
+            style={{ maxWidth: "70px", maxHeight: "70px" }}
           />
         </NavLink>
         <Nav className="nav-right-side-component">
-          <NavLink to="/internship" className="nav-link text-style ">
+          <NavLink to="/job" className="nav-link text-style ">
             Internship
           </NavLink>
           {isAuthenticated ? (
-            // if user logs in
+            // if user has logged in
             <>
               <Nav className="nav-link">{currentUser?.email}</Nav>
               <Button onClick={() => logout()}>Log Out</Button>
+              <div>{currentUser?.displayName}</div>
             </>
           ) : (
             // if user has not logged in
-            <NavLink to="/signup" className="signup-box-style">
-              Sign Up
-            </NavLink>
+            <>
+              <NavLink to="/signup" className="signup-box-style">
+                Sign Up
+              </NavLink>
+              <NavLink to="/login" className="signup-box-style">
+                Log In
+              </NavLink>
+            </>
           )}
         </Nav>
       </Container>

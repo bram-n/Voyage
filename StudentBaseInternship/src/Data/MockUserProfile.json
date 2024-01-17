@@ -1,0 +1,34 @@
+
+{
+    "name": "Lucas Truong",
+    "gender": "Male",
+    "birthday": "1990-05-15",
+    "email": "lucas.longtruong@gmail.com",
+    "password": "********",
+    "newPassword": "",
+    "education": [
+      {
+        "title": "Computer Science",
+        "date": "2020-2024",
+        "description": "Bachelor's Degree"
+      },
+      {
+        "title": "Data Science",
+        "date": "2025-2027",
+        "description": "Master's Degree"
+      }
+    ],
+    "jobExperience": [
+      {
+        "title": "Software Engineer",
+        "date": "2024-2026",
+        "description": "Worked on various projects involving web development and backend systems at Google."
+      },
+      {
+        "title": "Quantitative Analyst",
+        "date": "2027-Present",
+        "description": "Analyzing financial data and developing models at 2 Sigma."
+      }
+    ]
+  }
+  

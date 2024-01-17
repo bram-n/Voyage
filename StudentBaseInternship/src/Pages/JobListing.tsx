@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
-import { Container } from "react-bootstrap";
+import { Container, Nav } from "react-bootstrap";
 import JobCard from "../Components/JobCard"; // Assuming the component is in a separate file
 import DataJSON from "../Data/DataJSON.json"; // Adjust the path accordingly
 import Job from "../Data/JobDataType"; // Import the interface
 import mapJsonToJob from "../Data/MapJsonToJob";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import "./pagination.css"; // Import the CSS file
+import NavBar from "../Components/NavBar";
 
 const ItemsPerPage = 8;
 
@@ -53,6 +54,8 @@ function PaginatedJobItems() {
   const pageCount = Math.ceil(dataToPaginate.length / ItemsPerPage);
 
   return (
+    <>
+    <NavBar/>
     <Container>
       <Row className="m-3">
         <Col md={5}>
@@ -92,6 +95,7 @@ function PaginatedJobItems() {
           jobTitle={data["Job Title"]}
           salary={data["Salary Estimate"]}
           rating={data["Rating"]}
+
         />
       ))}
       {pageCount > 1 && ( // Display pagination only if there are more than one page
@@ -111,6 +115,7 @@ function PaginatedJobItems() {
         </Row>
       )}
     </Container>
+    </>
   );
 }
 

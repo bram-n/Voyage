@@ -3,6 +3,7 @@ import { Row, Col, Card, Form, Button, Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Description from "../Components/Description";
 import DataJSON from "../Data/DataJSON.json";
+import NavBar from "../Components/NavBar";
 
 function DescriptionPage() {
   // ts-ignore
@@ -33,6 +34,8 @@ function DescriptionPage() {
   // Now you c
 
   return (
+    <>
+    <NavBar/>
     <Container>
       <Description
         key={data[""]}
@@ -46,6 +49,7 @@ function DescriptionPage() {
         description={textWithHTMLLineBreaks}
       />
     </Container>
+    </>
   );
 }
 

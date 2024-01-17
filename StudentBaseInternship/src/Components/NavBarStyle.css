@@ -1,6 +1,10 @@
 @import '../assets/Fonts.css';
 
 
+.custom-navbar {
+    height: 80px;  /* Adjust the height as needed */
+  }
+
 .yellow-background {
     /* background: #FCEDDA; */
     background: (217, 217, 217, 0.04);
@@ -12,6 +16,7 @@
     justify-content: center;
     width: 30px;
     height:30px; 
+    margin-left: 20px;
 }
 
 
@@ -27,7 +32,7 @@
     color: #2F3C7E;
     text-align: center;
     font-family: Karla;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -50,12 +55,12 @@
     color: #2F3C7E;
     text-align: center;
     font-family: Karla;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
 
-    margin:3vh;
+    margin:1vh;
     padding: 3vh;
     text-decoration: none;
     

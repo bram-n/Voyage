@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 interface JobCardProps {
   keyIndex: number,
@@ -13,7 +13,7 @@ interface JobCardProps {
 
 function JobCard({ keyIndex, company, location, jobTitle, salary, rating }: JobCardProps) {
   return (
-    <Link to={`/description/${keyIndex}`}>
+    <Link to={`/description/${keyIndex}`} style={{ textDecoration: 'none', color: 'inherit' }}>
     <Card>
       <Card.Body>
         <Card.Title>{keyIndex}{". "}{company}</Card.Title>
