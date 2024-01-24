@@ -3,15 +3,14 @@ import ReactPaginate from "react-paginate";
 import { Container, Nav } from "react-bootstrap";
 import JobCard from "../Components/JobCard"; // Assuming the component is in a separate file
 import DataJSON from "../Data/DataJSON.json"; // Adjust the path accordingly
-import Job from "../Data/JobDataType"; // Import the interface
 import mapJsonToJob from "../Data/MapJsonToJob";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import "./pagination.css"; // Import the CSS file
 import NavBar from "../Components/NavBar";
 
 const ItemsPerPage = 8;
-
-// ... (previous imports)
+const cleanedData = DataJSON;
+cleanedData
 
 function PaginatedJobItems() {
   const [currentPage, setCurrentPage] = useState(0);
