@@ -1,10 +1,8 @@
 import { promises as fs } from 'fs';
-import * as path from 'path';
 import Papa from 'papaparse';
 
 const csvFilePath = "Data/DataAnalyst.csv";
 const jsonFilePath = "Data/DataJSON.json";
-
 
 const parseCSVtoJSON = async (csvFilePath, jsonFilePath) => {
   try {
@@ -17,13 +15,6 @@ const parseCSVtoJSON = async (csvFilePath, jsonFilePath) => {
       });
     });
 
-    // Modify the jsonArray to clean the "Company Name" field
-    const cleanedDataJSON = jsonArray.map((entry) => ({
-      ...entry,
-      "Company Name": entry["Company Name"] ? entry["Company Name"].replace(/\n\d+/g, '') : '',
-    }));
-    // Log the cleaned entries
-    console.log('Cleaned Data Entries:', cleanedDataJSON);
     await fs.writeFile(jsonFilePath, JSON.stringify(jsonArray, null, 2));
 
     console.log('Conversion completed. JSON file saved:', jsonFilePath);
