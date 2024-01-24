@@ -9,8 +9,6 @@ import "./pagination.css"; // Import the CSS file
 import NavBar from "../Components/NavBar";
 
 const ItemsPerPage = 8;
-const cleanedData = DataJSON;
-cleanedData
 
 function PaginatedJobItems() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -25,26 +23,34 @@ function PaginatedJobItems() {
   const handleSearch = () => {
     if (keyword !== "" || location !== "") {
       const filteredData = DataJSON.filter((data) => {
-        const keywordMatch =
+        let keywordMatch = false
+        let locationMatch = false
+        if (keyword == "") {keywordMatch = true}
+        else {
+          keywordMatch =
           keyword !== undefined &&
-          keyword !== "" &&
           (data["Company Name"] !== undefined && data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
           data["Job Title"] !== undefined && data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
 
-        const locationMatch =
+        }
+        
+        if (location == "") {locationMatch = true}
+        else {
+          locationMatch =
           location !== undefined &&
           data["Location"] !== undefined &&
           data["Location"].toLowerCase().includes(location.toLowerCase());
-
+        } 
+        console.log(keywordMatch && locationMatch )
         return keywordMatch && locationMatch;
       });
-
-      setFilteredData(filteredData);
+      setFilteredData(filteredData => filteredData);
+      console.log(filteredData);
+      
     } else {
       setFilteredData([]);
     }
   };
-
   const dataToPaginate = filteredData.length > 0 ? filteredData : DataJSON;
   const startIndex = currentPage * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
