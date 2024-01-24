@@ -18,38 +18,25 @@ function PaginatedJobItems() {
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-
   const handlePageClick = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
   };
-
   const handleSearch = () => {
     if (keyword !== "" || location !== "") {
-      const filteredData = DataJSON.filter((data) => {
-        let keywordMatch = false
-        let locationMatch = false
-        if (keyword == "") {keywordMatch = true}
-        else {
-          keywordMatch =
+      const newFilteredData = DataJSON.filter((data) => {
+        const keywordMatch =
           keyword !== undefined &&
           (data["Company Name"] !== undefined && data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
           data["Job Title"] !== undefined && data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
-
-        }
-        
-        if (location == "") {locationMatch = true}
-        else {
-          locationMatch =
+        const locationMatch =
           location !== undefined &&
           data["Location"] !== undefined &&
           data["Location"].toLowerCase().includes(location.toLowerCase());
-        } 
-        console.log(keywordMatch && locationMatch )
         return keywordMatch && locationMatch;
       });
-      setFilteredData(filteredData => filteredData);
-      console.log(filteredData);
+      console.log(newFilteredData);
       
+      setFilteredData(newFilteredData);
     } else {
       setFilteredData([]);
     }
@@ -58,12 +45,9 @@ function PaginatedJobItems() {
   const startIndex = currentPage * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
   const currentData = dataToPaginate.slice(startIndex, endIndex);
-
   const pageCount = Math.ceil(dataToPaginate.length / ItemsPerPage);
 
   return (
-    <>
-    <NavBar/>
     <Container>
       <Row className="m-3">
         <Col md={5}>
@@ -103,7 +87,6 @@ function PaginatedJobItems() {
           jobTitle={data["Job Title"]}
           salary={data["Salary Estimate"]}
           rating={data["Rating"]}
-
         />
       ))}
       {pageCount > 1 && ( // Display pagination only if there are more than one page
@@ -123,9 +106,7 @@ function PaginatedJobItems() {
         </Row>
       )}
     </Container>
-    </>
   );
 }
 
 export default PaginatedJobItems;
-
