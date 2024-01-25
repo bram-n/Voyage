@@ -7,6 +7,7 @@ import Job from "../Data/JobDataType"; // Import the interface
 import mapJsonToJob from "../Data/MapJsonToJob";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import "./pagination.css"; // Import the CSS file
+import { useTable, useFilters } from 'react-table';
 import NavBar from "../Components/NavBar";
 
 const ItemsPerPage = 8;
@@ -40,14 +41,17 @@ function PaginatedJobItems() {
     } else {
       setFilteredData([]);
     }
+    setCurrentPage(0);
   };
-  const dataToPaginate = filteredData.length > 0 ? filteredData : DataJSON;
+  const dataToPaginate = filteredData ;
   const startIndex = currentPage * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
   const currentData = dataToPaginate.slice(startIndex, endIndex);
   const pageCount = Math.ceil(dataToPaginate.length / ItemsPerPage);
 
   return (
+    <>
+    <NavBar/>
     <Container>
       <Row className="m-3">
         <Col md={5}>
@@ -105,7 +109,9 @@ function PaginatedJobItems() {
           </div>
         </Row>
       )}
+      <br/>
     </Container>
+    </>
   );
 }
 
