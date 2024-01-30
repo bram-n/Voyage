@@ -2,13 +2,15 @@
 
 
 .custom-navbar {
-    height: 80px;  /* Adjust the height as needed */
+    height: 100px;  /* Adjust the height as needed */
+    background-color:#ffe6cc;
   }
-
+  
+/* 
 .yellow-background {
-    /* background: #FCEDDA; */
+    background: #FCEDDA;
     background: (217, 217, 217, 0.04);
-}
+} */
 
 .logo-div {
     display: flex;
@@ -43,6 +45,10 @@
 }
 .text-style:hover {
     text-decoration: underline;
+}
+
+.text-style:visited{
+    color: #2F3C7E;
 }
 
 /*Sign Up Box */

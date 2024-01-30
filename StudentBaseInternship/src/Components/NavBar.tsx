@@ -28,7 +28,7 @@ export default function NavBar() {
           />
         </NavLink>
         <Nav className="nav-right-side-component">
-          <NavLink to="/job" className="nav-link text-style ">
+          <NavLink to="/job" className="nav-link text-style">
             Internship
           </NavLink>
           {isAuthenticated ? (

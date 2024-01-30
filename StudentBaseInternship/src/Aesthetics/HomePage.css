@@ -1,0 +1,6 @@
+.img-work1{
+    width: 400px; /* Set your desired width */
+    height: 400px; /* Set your desired height */
+    border-radius: 50%; /* This will make the image circular */
+    overflow: hidden; /* This ensures the image stays within the circle */
+}
