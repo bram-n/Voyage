@@ -3,11 +3,11 @@
 
 .custom-navbar {
     height: 100px;  /* Adjust the height as needed */
-    background-color:#ffe6cc;
+    background-color:#f8dcbe;
   }
   
-/* 
-.yellow-background {
+
+/* .yellow-background {
     background: #FCEDDA;
     background: (217, 217, 217, 0.04);
 } */
@@ -18,7 +18,11 @@
     justify-content: center;
     width: 30px;
     height:30px; 
+    font-size: 50px;
+    font-family: Caivun_9;
     margin-left: 20px;
+    color:#2F3C7E;
+    text-decoration: none;
 }
 
 
@@ -68,7 +72,7 @@
 
     margin:1vh;
     padding: 3vh;
-    text-decoration: none;
+    /* text-decoration: none; */
     
 }
 .signup-box-style:hover {

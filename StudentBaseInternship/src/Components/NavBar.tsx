@@ -9,23 +9,21 @@ import imageLogo from "../assets/Sb-2.png";
 
 export default function NavBar() {
   const { currentUser, logout, isAuthenticated } = useAuth();
-  // console.log("heoll Im navbar");
-  // console.log(currentUser);
-
   return (
     <Navbar
-      bg="light"
-      data-bs-theme="light"
       className="yellow-background custom-navbar"
     >
       <Container>
         <NavLink to="/" className="logo-div">
-          <img
+          <div className = "logo">
+            Voyage
+          </div>
+          {/* <img
             src={imageLogo}
             alt="Internship Logo"
             className="image-style"
             style={{ maxWidth: "70px", maxHeight: "70px" }}
-          />
+          /> */}
         </NavLink>
         <Nav className="nav-right-side-component">
           <NavLink to="/job" className="nav-link text-style">

@@ -1,6 +1,50 @@
+body{
+    background-color: #eccfaf;
+}
+
+
+.text-center{
+    margin-right: 90px;
+    margin-top: 100px;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.text-paragraph{
+    font-family: Karla;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+
+.explore-jobs{
+    background-color: #2F3C7E;
+    text-decoration: none;
+    font-family: Karla;
+    font-size: 30px;
+}
+
+
+.explore-jobs:hover{
+    background-color: #2F3C7E;
+    text-decoration: none;
+    font-family: Karla;
+    font-size: 30px;
+}
+
+.explore-jobs:active{
+    background-color: #303f89;
+    text-decoration: none;
+    font-family: Karla;
+    font-size: 30px;
+}
+
 .img-work1{
     width: 400px; /* Set your desired width */
     height: 400px; /* Set your desired height */
     border-radius: 50%; /* This will make the image circular */
     overflow: hidden; /* This ensures the image stays within the circle */
+    margin-left: 150px;
+    margin-top: 120px;
 }

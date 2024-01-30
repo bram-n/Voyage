@@ -11,16 +11,17 @@ export default function Home() {
   console.log(currentUser?.toJSON);
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <Container>
       <Row>
       <Col xs={12} md={6}>
         <br/>
-        <h1 className="text-center">Work Website</h1>
+        <h1 className="text-center">Find Your Next Voyage</h1>
+        <h2 className = "text-paragraph">Embark on a journey towards your dream career with Voyage, exploring endless opportunities and navigating the dynamic world of work with confidence.</h2>
         <br/>
         <NavLink to="/job">
           <div className="d-grid gap-2">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className = "explore-jobs">
               Explore Jobs
             </Button>
           </div>
