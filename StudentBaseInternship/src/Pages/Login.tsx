@@ -78,7 +78,7 @@ export default function LoginForm() {
                 <h5>Submit</h5>
               </Button>
               <br/>
-              <Link to= "/signup" style={{textDecoration: 'none'}}>Have not registered ?</Link>
+              <Link to= "/signup" style={{textDecoration: 'none'}}>Not registered?</Link>
             </div>
           </Form>
         </Card.Body>

@@ -78,7 +78,7 @@ export default function SignUpForm() {
                 <h5>Submit</h5>
               </Button>
               <br/>
-              <Link to= "/login" style={{textDecoration: 'none'}}>Already has an account ?</Link>
+              <Link to= "/login" style={{textDecoration: 'none'}}>Already have an account?</Link>
             </div>
           </Form>
         </Card.Body>
