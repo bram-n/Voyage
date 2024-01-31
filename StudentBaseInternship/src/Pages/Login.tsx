@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from 'react-router-dom';
+import "../Aesthetics/Login.css";
 
 export default function LoginForm() {
   // States
@@ -35,11 +36,11 @@ export default function LoginForm() {
   };
 
   return (
-    <Container style={{ width: "50%" }}>
+    <Container style={{ width: "50%" }} className = "login-container">
       <br />
-      <Card>
+      <Card className = "card">
         <Card.Header className="text-center">
-          <h1>Log In</h1>
+          <h1 className = "logo">Voyage</h1>
         </Card.Header>
         {error && <Alert variant="danger">{error}</Alert>}
         <Card.Body>
@@ -60,6 +61,7 @@ export default function LoginForm() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className = "form"
               />
             </Form.Group>
 
@@ -70,15 +72,16 @@ export default function LoginForm() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className = "form"
               />
             </Form.Group>
 
             <div className="text-center">
-              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }}>
-                <h5>Submit</h5>
+              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }} className = "login-button">
+                <h5 className = "login-text">Log in</h5>
               </Button>
               <br/>
-              <Link to= "/signup" style={{textDecoration: 'none'}}>Not registered?</Link>
+              <Link to= "/signup" style={{textDecoration: 'none'}} className = "not-registered">Not registered?</Link>
             </div>
           </Form>
         </Card.Body>

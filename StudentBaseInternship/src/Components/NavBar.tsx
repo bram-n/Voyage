@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
-import "./NavBarStyle.css";
+import "../Aesthetics/NavBarStyle.css";
 import imageLogo from "../assets/Sb-2.png";
 
 // NavBar with routing applied
