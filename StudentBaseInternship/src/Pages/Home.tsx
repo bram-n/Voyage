@@ -14,9 +14,9 @@ export default function Home() {
       <NavBar/>
       <Container>
       <Row>
-      <Col xs={12} md={6}>
+      <Col xs={12} md={6} className = "column">
         <br/>
-        <h1 className="text-center">Find Your Next Voyage</h1>
+        <h1 className="text-center">CONTINUE YOUR VOYAGE</h1>
         <h2 className = "text-paragraph">Embark on a journey towards your dream career with Voyage, exploring endless opportunities and navigating the dynamic world of work with confidence.</h2>
         <br/>
         <NavLink to="/job" style={{ textDecoration: 'none' }}>

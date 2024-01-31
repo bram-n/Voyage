@@ -39,7 +39,7 @@ export default function LoginForm() {
     <Container style={{ width: "50%" }} className = "login-container">
       <br />
       <Card className = "card">
-        <Card.Header className="text-center">
+        <Card.Header className="text-login-center">
           <h1 className = "logo">Voyage</h1>
         </Card.Header>
         {error && <Alert variant="danger">{error}</Alert>}
@@ -76,7 +76,7 @@ export default function LoginForm() {
               />
             </Form.Group>
 
-            <div className="text-center">
+            <div className="text-login-center">
               <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }} className = "login-button">
                 <h5 className = "login-text">Log in</h5>
               </Button>

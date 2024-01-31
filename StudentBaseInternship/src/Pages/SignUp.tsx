@@ -40,7 +40,7 @@ export default function SignUpForm() {
       <br />
       <Card>
         {/* Sign Up button*/ }
-        <Card.Header className="text-center">
+        <Card.Header className="text-signup-center">
           <h1 className = "logo">Voyage</h1>
         </Card.Header>
         {/* Error  Display*/}
@@ -76,7 +76,7 @@ export default function SignUpForm() {
                 className = "form"
               />
             </Form.Group>
-            <div className="text-center">
+            <div className="text-signup-center">
               <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }} className = "signup-button">
                 <h5 className = "signup-text">Sign Up</h5>
               </Button>

@@ -8,17 +8,21 @@
     color:#2F3C7E;
     text-decoration: none;
     margin-top: -50px;
+    
 }
 
 .login-container{
     margin-top: 150px;
 }
-.text-center{
-    margin-left: 100px;
+.text-login-center{
     text-decoration: none;
     box-shadow: 0;
     background-color: transparent;
     border-bottom: none;
+    text-align: center;
+    margin-top: 90px;
+    font-size: 60px;
+    font-family: Caivun_9;
 }
 .card{
     background-color: #f8dcbe;
