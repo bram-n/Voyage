@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="text-center">Find Your Next Voyage</h1>
         <h2 className = "text-paragraph">Embark on a journey towards your dream career with Voyage, exploring endless opportunities and navigating the dynamic world of work with confidence.</h2>
         <br/>
-        <NavLink to="/job">
+        <NavLink to="/job" style={{ textDecoration: 'none' }}>
           <div className="d-grid gap-2">
             <Button variant="primary" size="lg" className = "explore-jobs">
               Explore Jobs
@@ -31,6 +31,7 @@ export default function Home() {
         <img src={WebImage} alt="Placeholder Image" className="img-work1" />
       </Col>
     </Row>
+    <br></br>
     </Container>
 
     </>
