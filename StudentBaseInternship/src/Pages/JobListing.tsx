@@ -64,13 +64,17 @@ function PaginatedJobItems() {
     // Change the pattern
     const searchPattern = keyword + location
     
-    const newFiltered = fuse.search(searchPattern)
-    console.log(Array.isArray(newFiltered));
-    
-    setFilteredData(newFiltered)
-    setCurrentPage(0)
-    console.log(newFiltered[0]);
-    
+    const newFiltered = fuse.search(searchPattern);
+
+// Extract the "item" property from each object in newFiltered
+const itemsArray = newFiltered.map(item => item.item);
+
+// Set filteredData to the array of "item" values
+setFilteredData(itemsArray);
+
+setCurrentPage(0);
+
+console.log(itemsArray);
   }
   const dataToPaginate = filteredData ;
   const startIndex = currentPage * ItemsPerPage;
