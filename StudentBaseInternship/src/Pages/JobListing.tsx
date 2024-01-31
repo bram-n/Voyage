@@ -9,6 +9,7 @@ import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import "./pagination.css"; // Import the CSS file
 import { useTable, useFilters } from 'react-table';
 import NavBar from "../Components/NavBar";
+import Fuse from 'fuse.js'
 
 const ItemsPerPage = 8;
 
@@ -19,30 +20,58 @@ function PaginatedJobItems() {
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const fuseOptions = {
+    keys: [
+      "Company Name",
+      "Job Title",
+      "Location"
+    ]
+  };
+  
+  const fuse = new Fuse(DataJSON, fuseOptions);
+  console.log("world");
+  
+
   const handlePageClick = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
   };
-  const handleSearch = () => {
-    if (keyword !== "" || location !== "") {
-      const newFilteredData = DataJSON.filter((data) => {
-        const keywordMatch =
-          keyword !== undefined &&
-          (data["Company Name"] !== undefined && data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
-          data["Job Title"] !== undefined && data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
-        const locationMatch =
-          location !== undefined &&
-          data["Location"] !== undefined &&
-          data["Location"].toLowerCase().includes(location.toLowerCase());
-        return keywordMatch && locationMatch;
-      });
-      console.log(newFilteredData);
+  // const handleSearch = () => {
+  //   if (keyword !== "" || location !== "") {
+  //     const newFilteredData = DataJSON.filter((data) => {
+  //       const keywordMatch =
+  //         keyword !== undefined &&
+  //         (data["Company Name"] !== undefined && data["Company Name"].toLowerCase().includes(keyword.toLowerCase()) ||
+  //         data["Job Title"] !== undefined && data["Job Title"].toLowerCase().includes(keyword.toLowerCase()));
+  //       const locationMatch =
+  //         location !== undefined &&
+  //         data["Location"] !== undefined &&
+  //         data["Location"].toLowerCase().includes(location.toLowerCase());
+  //       return keywordMatch && locationMatch;
+  //     });
+  //     console.log(newFilteredData);
       
-      setFilteredData(newFilteredData);
-    } else {
-      setFilteredData([]);
-    }
-    setCurrentPage(0);
-  };
+  //     setFilteredData(newFilteredData);
+  //   } else {
+  //     setFilteredData([]);
+  //   }
+  //   setCurrentPage(0);
+  // };
+
+  
+  const handleSearch = () => {
+   
+    
+    // Change the pattern
+    const searchPattern = keyword + location
+    
+    const newFiltered = fuse.search(searchPattern)
+    console.log(Array.isArray(newFiltered));
+    
+    setFilteredData(newFiltered)
+    setCurrentPage(0)
+    console.log(newFiltered[0]);
+    
+  }
   const dataToPaginate = filteredData ;
   const startIndex = currentPage * ItemsPerPage;
   const endIndex = startIndex + ItemsPerPage;
