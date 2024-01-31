@@ -20,14 +20,17 @@ body{
 
 .explore-jobs{
     background-color: #2F3C7E;
+    border-color: #2F3C7E;
     text-decoration: none;
     font-family: Karla;
     font-size: 30px;
+    
 }
 
 
 .explore-jobs:hover{
     background-color: #2F3C7E;
+    border-color: #2F3C7E;
     text-decoration: none;
     font-family: Karla;
     font-size: 30px;
