@@ -81,7 +81,9 @@ export default function LoginForm() {
                 <h5 className = "login-text">Log in</h5>
               </Button>
               <br/>
+              <div className = "notregisteredPosition">
               <Link to= "/signup" style={{textDecoration: 'none'}} className = "not-registered">Not registered?</Link>
+              </div>
             </div>
           </Form>
         </Card.Body>

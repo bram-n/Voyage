@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from 'react-router-dom';
+import "../Aesthetics/Signup.css";
 
 export default function SignUpForm() {
   // States
@@ -35,12 +36,12 @@ export default function SignUpForm() {
   };
 
   return (
-    <Container style={{ width: "50%" }}>
+    <Container style={{ width: "50%" }} className = "signup-container">
       <br />
       <Card>
         {/* Sign Up button*/ }
         <Card.Header className="text-center">
-          <h1>Sign Up</h1>
+          <h1 className = "logo">Voyage</h1>
         </Card.Header>
         {/* Error  Display*/}
         {error && <Alert variant="danger">{error}</Alert>}
@@ -62,6 +63,7 @@ export default function SignUpForm() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className = "form"
               />
             </Form.Group>
 
@@ -71,14 +73,17 @@ export default function SignUpForm() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className = "form"
               />
             </Form.Group>
             <div className="text-center">
-              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }}>
-                <h5>Submit</h5>
+              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }} className = "signup-button">
+                <h5 className = "signup-text">Sign Up</h5>
               </Button>
               <br/>
-              <Link to= "/login" style={{textDecoration: 'none'}}>Already have an account?</Link>
+              <div className = "have-account-pos">
+              <Link to= "/login" style={{textDecoration: 'none'}} className = "have-account">Already have an account?</Link>
+              </div>
             </div>
           </Form>
         </Card.Body>
