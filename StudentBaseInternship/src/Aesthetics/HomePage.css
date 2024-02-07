@@ -11,21 +11,22 @@ body{
 .text-center{
     text-align: center;
     font-size: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 10%;
+    margin-top: 0%;
     text-align: left;
     font-family: Caivun_9;
-    margin-left: 100px;
+    margin-left: 20%;
     background-color: eccfaf;
 }
 .column{
     background-color: #eccfaf;
-    margin-top: 150px;
+    margin-top: 10%;
 }
 
 .text-paragraph{
     font-family: Karla;
     font-size: 20px;
-    margin-left: 110px;
+    margin-left: 20%;
 }
 
 
@@ -35,7 +36,7 @@ body{
     text-decoration: none;
     font-family: Caivun_9;
     font-size: 40px;
-    margin-left: 110px;
+    margin-left: 20%;
 }
 
 
@@ -45,7 +46,10 @@ body{
     text-decoration: none;
     font-family: Caivun_9;
     font-size: 40px;
-    margin-left: 110px;
+    margin-left: 20%;
+    margin-bottom: 30%;
+
+
 }
 
 .explore-jobs:active{
@@ -53,14 +57,16 @@ body{
     text-decoration: none;
     font-family: Caivun_9;
     font-size: 40px;
-    margin-left: 110px;
+    margin-left: 20%;
+
 }
 
 .img-work1{
-    width: 400px; /* Set your desired width */
-    height: 400px; /* Set your desired height */
+    width: 70%; /* Set your desired width */
+    height: 70%; /* Set your desired height */
     border-radius: 50%; /* This will make the image circular */
     overflow: hidden; /* This ensures the image stays within the circle */
-    margin-left: 150px;
-    margin-top: 120px;
+    margin-left: 20%;
+    margin-top: 20%;
+    background: #002;
 }
