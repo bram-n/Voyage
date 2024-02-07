@@ -1,46 +1,46 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
-import { useNavigate, Link } from 'react-router-dom';
-import "../Aesthetics/Login.css";
+import { useNavigate, Link } from "react-router-dom";
+import "../Aesthetics/signup.css";
 
 export default function LoginForm() {
   // States
-  const [currentUser, setCurrentUser] = useState("")
+  const [currentUser, setCurrentUser] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState("")
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   // Auth Context
   const { login } = useAuth();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (loading) { 
-      console.error("Loading previous request")
-      return 
+    if (loading) {
+      console.error("Loading previous request");
+      return;
     }
-    
+
     try {
-      setLoading(true)
+      setLoading(true);
       await login(email, password);
       console.log("Sign up successful");
-      navigate("/")
+      navigate("/");
     } catch (err) {
-      setError((err as Error).message)
+      setError((err as Error).message);
       console.error("Error loggin in:", (err as Error).message);
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
-    <Container style={{ width: "50%" }} className = "login-container">
+    <Container className="signup-container">
       <br />
-      <Card className = "card">
-        <Card.Header className="text-login-center">
-          <h1 className = "logo">Voyage</h1>
+      <Card className="card">
+        <Card.Header className="text-signup-center">
+          <h1 className="logo-signup">Voyage</h1>
         </Card.Header>
         {error && <Alert variant="danger">{error}</Alert>}
         <Card.Body>
@@ -61,7 +61,6 @@ export default function LoginForm() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className = "form"
               />
             </Form.Group>
 
@@ -72,17 +71,27 @@ export default function LoginForm() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className = "form"
               />
             </Form.Group>
 
-            <div className="text-login-center">
-              <Button variant="primary" type="submit" style={{ width: "40%", marginBottom: '1vh' }} className = "login-button">
-                <h5 className = "login-text">Log in</h5>
+            <div className="centered-div">
+              <Button
+                variant="primary"
+                type="submit"
+              
+                className="signup-button"
+              >
+                <h5 className="login-text">Log in</h5>
               </Button>
-              <br/>
-              <div className = "notregisteredPosition">
-              <Link to= "/signup" style={{textDecoration: 'none'}} className = "not-registered">Not registered?</Link>
+              <br />
+              <div className="notregisteredPosition">
+                <Link
+                  to="/signup"
+                  style={{ textDecoration: "none" }}
+                  className="have-account"
+                >
+                  Not registered?
+                </Link>
               </div>
             </div>
           </Form>

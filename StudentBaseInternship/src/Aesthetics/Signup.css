@@ -1,28 +1,35 @@
 
-.logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 70px;
-    font-family: Caivun_9;
-    margin-left: 20px;
+.logo-signup{
+    font-size: larger;
+    font: Caivun_9;
     color:#2F3C7E;
     text-decoration: none;
-    margin-top: -50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 10vh;
+    font-family: Caivun_9;
+    color:#2F3C7E;
+    text-decoration: none;
 }
 
+
 .signup-container{
-    margin-top: 150px;
+    margin-top: 10%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Adjust the height as needed */
 }
 .text-signup-center{
     text-decoration: none;
     box-shadow: 0;
     background-color: transparent;
     border-bottom: none;
-    text-align: center;
-    margin-top: 90px;
-    font-size: 60px;
-    font-family: Caivun_9;
+    margin: 0 auto; /* This will center the div horizontally */
+    
+    text-align: center; 
+  
 }
 .card{
     background-color: #f8dcbe;
@@ -31,27 +38,36 @@
 }
 
 .signup-text{
-    margin-top: 10px;
+
     font-size: 20px;
 }
 .signup-button{
-    margin-top: -140px;
-    margin-left: 20px;
+    width: 50%;
     background-color: #2F3C7E;
 }
 
+.centered-div {
+    margin: 0 auto; /* This will center the div horizontally */
+    text-align: center; /* This will center the text inside the div */
+}
+
 .form{
-    width: 400px;
-    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .have-account{
     font-family: Karla;
-    font-size: 25px;
-    margin-left: 30px;
-    display: inline-block;
+   
+    text-align: center;
     border-color:#2F3C7E;
     color: #2F3C7E;
+    margin-top: 2%;
+    /*center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .have-account-pos{
