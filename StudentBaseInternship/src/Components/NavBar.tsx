@@ -5,49 +5,41 @@ import { useAuth } from "../Contexts/AuthContext";
 import "../Aesthetics/NavBarStyle.css";
 import imageLogo from "../assets/Sb-2.png";
 
-// NavBar with routing applied
-
 export default function NavBar() {
   const { currentUser, logout, isAuthenticated } = useAuth();
+
   return (
-    <Navbar
-      className="yellow-background custom-navbar"
-    >
+    <Navbar className="yellow-background custom-navbar" expand="lg">
       <Container>
         <NavLink to="/" className="logo-div">
-          <div className = "logo">
-            Voyage
-          </div>
-          {/* <img
-            src={imageLogo}
-            alt="Internship Logo"
-            className="image-style"
-            style={{ maxWidth: "70px", maxHeight: "70px" }}
-          /> */}
+          <div className="logo">Voyage</div>
         </NavLink>
-        <Nav className="nav-right-side-component">
-          <NavLink to="/job" className="nav-link text-style">
-            Internship
-          </NavLink>
-          {isAuthenticated ? (
-            // if user has logged in
-            <>
-              <Nav className="nav-link">{currentUser?.email}</Nav>
-              <Button onClick={() => logout()}>Log Out</Button>
-              <div>{currentUser?.displayName}</div>
-            </>
-          ) : (
-            // if user has not logged in
-            <>
-              <NavLink to="/signup" className="signup-box-style">
-                Sign Up
-              </NavLink>
-              <NavLink to="/login" className="signup-box-style">
-                Log In
-              </NavLink>
-            </>
-          )}
-        </Nav>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavLink to="/job" className="nav-link text-style">
+              Internship
+            </NavLink>
+          </Nav>
+          <Nav>
+            {isAuthenticated ? (
+              <>
+                <Nav className="nav-link">{currentUser?.email}</Nav>
+                <Button onClick={() => logout()}>Log Out</Button>
+                <div>{currentUser?.displayName}</div>
+              </>
+            ) : (
+              <>
+                <NavLink to="/signup" className="signup-box-style">
+                  Sign Up
+                </NavLink>
+                <NavLink to="/login" className="signup-box-style">
+                  Log In
+                </NavLink>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

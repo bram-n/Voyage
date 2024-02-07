@@ -1,4 +1,3 @@
-
 .logo-signup{
     font-size: larger;
     font: Caivun_9;
@@ -12,35 +11,36 @@
     text-decoration: none;
 }
 
-
-.signup-container{
-    margin-top: 10%;
-    width: 60%;
-    display: flex;
+.signup-container {
+    margin-top: 20vh;
+    width: 60%; /* Adjust width as needed */
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Adjust the height as needed */
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto; /* Add auto margins to center horizontally */
 }
+
+@media screen and (max-width: 800px) {
+    .signup-container {
+        width: 90%; /* Adjust width for smaller screens */
+        min-width: unset; /* Remove min-width */
+    }
+}
+
 .text-signup-center{
     text-decoration: none;
     box-shadow: 0;
     background-color: transparent;
-    border-bottom: none;
-    margin: 0 auto; /* This will center the div horizontally */
-    
+    border-bottom: none; 
     text-align: center; 
-  
 }
+
 .card{
     background-color: #f8dcbe;
     width: 80%;
-    margin-left: 100px;
 }
 
-.signup-text{
-
-    font-size: 20px;
-}
 .signup-button{
     width: 50%;
     background-color: #2F3C7E;
@@ -51,6 +51,9 @@
     text-align: center; /* This will center the text inside the div */
 }
 
+.signup-text{
+    text-align: center;
+}
 .form{
     display: flex;
     align-items: center;

@@ -79,7 +79,7 @@ export default function SignUpForm() {
                 type="submit"
                 className="signup-button"
               >
-                <h5>Sign Up</h5>
+                <h5 className = "signup-text">Sign Up</h5>
               </Button>
             </div>
             <Link

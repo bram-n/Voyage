@@ -1,12 +1,10 @@
 body{
     background-image: url("../Aesthetics/Website Background.png");
-    /* margin: 0; */
-    /* padding: 0; */
-    background-color: #eccfaf;
-    background-size: cover; /* This makes the background image cover the entire container */
-    background-repeat: no-repeat; /* This ensures that the background image is not repeated */
+    background-repeat: no-repeat; 
+    /* background-position: center; */
+    background-attachment: fixed;
+    background-size: cover;
 }
-
 
 .text-center{
     text-align: center;
@@ -18,6 +16,7 @@ body{
     margin-left: 20%;
     background-color: eccfaf;
 }
+
 .column{
     background-color: #eccfaf;
     margin-top: 10%;
