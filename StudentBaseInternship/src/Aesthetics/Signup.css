@@ -1,24 +1,23 @@
 .logo-signup{
-    font-size: larger;
-    font: Caivun_9;
-    color:#2F3C7E;
-    text-decoration: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10vh;
+    height: 10vh;
+    /*Fonts */
+    font-size: 30vh;
     font-family: Caivun_9;
     color:#2F3C7E;
     text-decoration: none;
+    font-size: 80px;
 }
 
 .signup-container {
-    margin-top: 20vh;
-    width: 60%; /* Adjust width as needed */
+    margin-top: 30vh;
+    width: 40%; /* Adjust width as needed */
     justify-content: center;
     align-items: center;
-    height: 50vh;
     margin-left: auto;
-    margin-right: auto; /* Add auto margins to center horizontally */
+    margin-right: auto; 
 }
 
 @media screen and (max-width: 800px) {
@@ -38,22 +37,22 @@
 
 .card{
     background-color: #f8dcbe;
-    width: 80%;
 }
 
-.signup-button{
+ .signup-button{
     width: 50%;
     background-color: #2F3C7E;
 }
 
 .centered-div {
-    margin: 0 auto; /* This will center the div horizontally */
-    text-align: center; /* This will center the text inside the div */
+    margin: 0 auto; 
+    text-align: center; 
 }
 
 .signup-text{
     text-align: center;
 }
+
 .form{
     display: flex;
     align-items: center;
@@ -62,12 +61,10 @@
 
 .have-account{
     font-family: Karla;
-   
     text-align: center;
     border-color:#2F3C7E;
     color: #2F3C7E;
     margin-top: 2%;
-    /*center */
     display: flex;
     justify-content: center;
     align-items: center;
