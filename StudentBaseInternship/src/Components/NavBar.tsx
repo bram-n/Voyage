@@ -24,8 +24,8 @@ export default function NavBar() {
           <Nav>
             {isAuthenticated ? (
               <>
-                <Nav className="nav-link">{currentUser?.email}</Nav>
-                <Button onClick={() => logout()}>Log Out</Button>
+                {/* <Nav className="nav-link">{currentUser?.email}</Nav> */}
+                <Button onClick={() => logout()} className="signup-box-style">Log Out</Button>
                 <div>{currentUser?.displayName}</div>
               </>
             ) : (
