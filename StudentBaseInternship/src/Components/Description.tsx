@@ -18,9 +18,9 @@ function Description({keyIndex, jobTitle, rating, salary, sector, company, locat
     return ( 
         <Card>
             <Card.Body>
-            <Card.Title>{company}</Card.Title>
+            <Card.Title>{jobTitle}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">{company}</Card.Subtitle>
             <Card.Subtitle className="mb-2 text-muted">{location}</Card.Subtitle>
-            <Card.Subtitle className="mb-2 text-muted">{jobTitle}</Card.Subtitle>
             {/* <Card.Text>Salary: {salary}</Card.Text>
             <Card.Text>Rating: {rating}</Card.Text> */}
             <br></br>

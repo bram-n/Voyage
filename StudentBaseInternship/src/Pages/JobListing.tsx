@@ -4,12 +4,13 @@ import { Container, Nav } from "react-bootstrap";
 import JobCard from "../Components/JobCard"; // Assuming the component is in a separate file
 import DataJSON from "../Data/DataJSON.json"; // Adjust the path accordingly
 import Job from "../Data/JobDataType"; // Import the interface
-import mapJsonToJob from "../Data/MapJsonToJob";
+// import mapJsonToJob from "../Data/MapJsonToJob";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
-import "./pagination.css"; // Import the CSS file
-import { useTable, useFilters } from 'react-table';
+import "../Aesthetics/pagination.css"; // Import the CSS file
+// import { useTable, useFilters } from 'react-table';
 import NavBar from "../Components/NavBar";
 import Fuse from 'fuse.js'
+import "../Aesthetics/JobListing.css";
 
 const ItemsPerPage = 8;
 
@@ -59,8 +60,6 @@ function PaginatedJobItems() {
 
   
   const handleSearch = () => {
-   
-    
     // Change the pattern
     const searchPattern = keyword + location
     
@@ -87,12 +86,12 @@ console.log(itemsArray);
     <NavBar/>
     <Container>
       <Row className="m-3">
-        <Col md={5}>
-          <Form.Group controlId="keywordSearch">
-            <Form.Label>Keyword Search</Form.Label>
+        <Col md={5} className = "search-column">
+          <Form.Group controlId="keywordSearch" className = "search">
+            {/* <Form.Label>Keyword Search</Form.Label> */}
             <Form.Control
               type="text"
-              placeholder="Enter keyword..."
+              placeholder="Search Jobs"
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
             />
@@ -100,10 +99,10 @@ console.log(itemsArray);
         </Col>
         <Col md={5}>
           <Form.Group controlId="locationSearch">
-            <Form.Label>Location</Form.Label>
+            {/* <Form.Label>Location</Form.Label> */}
             <Form.Control
               type="text"
-              placeholder="Enter location..."
+              placeholder="Search Locations"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />

@@ -1,7 +1,6 @@
 body{
     background-image: url("../Aesthetics/Website Background.png");
     background-repeat: no-repeat; 
-    /* background-position: center; */
     background-attachment: fixed;
     background-size: cover;
 }
@@ -10,7 +9,7 @@ body{
     text-align: center;
     font-size: 60px;
     margin-bottom: 10%;
-    margin-top: 0%;
+
     text-align: left;
     font-family: Caivun_9;
     margin-left: 20%;
@@ -46,9 +45,6 @@ body{
     font-family: Caivun_9;
     font-size: 40px;
     margin-left: 20%;
-    margin-bottom: 30%;
-
-
 }
 
 .explore-jobs:active{

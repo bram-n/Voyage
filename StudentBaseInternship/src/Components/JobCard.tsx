@@ -16,9 +16,9 @@ function JobCard({ keyIndex, company, location, jobTitle, salary, rating }: JobC
     <Link to={`/description/${keyIndex}`} style={{ textDecoration: 'none', color: 'inherit' }}>
     <Card>
       <Card.Body>
-        <Card.Title>{keyIndex}{". "}{company}</Card.Title>
+        <Card.Title>{jobTitle}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{company}</Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted">{location}</Card.Subtitle>
-        <Card.Subtitle className="mb-2 text-muted">{jobTitle}</Card.Subtitle>
         <Card.Text>Salary: {salary}</Card.Text>
         <Card.Text>Rating: {rating}</Card.Text>
 
