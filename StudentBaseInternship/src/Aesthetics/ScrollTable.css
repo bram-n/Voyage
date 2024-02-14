@@ -103,6 +103,7 @@
   transition: background-color 0.3s ease;
   outline: 1px solid var(--hoverColor);
   cursor: pointer;
+  padding-top: 2vh;
 }
 
 .table-row-hover:hover {

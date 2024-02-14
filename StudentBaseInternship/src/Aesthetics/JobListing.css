@@ -1,9 +1,25 @@
-.search-column{
-    /* display: flex; */
+.search-column {
     align-items: center;
     justify-content: center;
 }
 
-@media screen and (max-width: 800px){
-    .
+.search-button{
+    background-color: var(--Blue, #2F3C7E);
+    border-color:  var(--Blue, #2F3C7E);
+    font-family: Karla;
+    font-weight: 600;
 }
+@media screen and (max-width: 800px) {
+    .searchbox {
+        padding-top: 2vh;
+    }
+    .search-button {
+        margin-top: 10px;
+        display: flex;
+        background-color: var(--Blue, #2F3C7E);
+        border-color:  var(--Blue, #2F3C7E);
+        justify-content: center; /* Center the button horizontally */
+        margin-left: 40%;
+    }
+}
+

@@ -87,7 +87,7 @@ console.log(itemsArray);
     <Container>
       <Row className="m-3">
         <Col md={5} className = "search-column">
-          <Form.Group controlId="keywordSearch" className = "search">
+          <Form.Group controlId="keywordSearch" className = "searchbox">
             {/* <Form.Label>Keyword Search</Form.Label> */}
             <Form.Control
               type="text"
@@ -97,8 +97,8 @@ console.log(itemsArray);
             />
           </Form.Group>
         </Col>
-        <Col md={5}>
-          <Form.Group controlId="locationSearch">
+        <Col md={5} className = "search-column">
+          <Form.Group controlId="locationSearch" className = "searchbox">
             {/* <Form.Label>Location</Form.Label> */}
             <Form.Control
               type="text"
@@ -108,14 +108,14 @@ console.log(itemsArray);
             />
           </Form.Group>
         </Col>
-        <Col md={2}>
-          <Button variant="primary" onClick={handleSearch}>
+        <Col md={2} className = "search-column">
+          <Button variant="primary" onClick={handleSearch} className = "search-button">
             Search
           </Button>
         </Col>
       </Row>
       {currentData.map((data, index) => (
-        <JobCard
+        <JobCard className = "job-card"
           key={index}
           keyIndex={data[""]}
           company={data["Company Name"]}

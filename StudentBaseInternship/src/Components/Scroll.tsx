@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import '../Aesthetics/ScrollTable.css'; // Import the CSS file
-import leftArrow from '../Aesthetics/leftarrow.svg';
-import rightArrow from '../Aesthetics/rightarrow.svg';
 
 const itemsPerPage = 20;
 
