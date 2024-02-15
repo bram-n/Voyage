@@ -37,5 +37,5 @@ To run this project locally, follow these steps:
 
 ## Contact
 
-For questions or inquiries about this project, feel free to reach out to [ltruong@macalester.edu](mailto:ltruong@macalester.edu).
+For questions or inquiries about this project, feel free to reach out to [ltruong@macalester.edu](mailto:ltruong@macalester.edu) or [bnutt@macalester.edu](mailto:bnutt@macalester.edu).
 
