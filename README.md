@@ -1,8 +1,8 @@
-# StudentBase Voyage
-![image](https://github.com/bram-n/studentbase/assets/98071520/5da21cf1-911b-4a4f-a884-afa72e2547df)
+# Voyage
+![image](https://github.com/bram-n/Voyage/assets/98071520/5da21cf1-911b-4a4f-a884-afa72e2547df)
 
 
-StudentBase Voyage is a project aimed at simulating the job application process for internships. Leveraging the power of React and TypeScript, this application provides a user-friendly interface for students to explore internship opportunities and apply for them.
+Voyage is a project aimed at simulating the job application process for internships. Leveraging the power of React and TypeScript, this application provides a user-friendly interface for students to explore internship opportunities and apply for them.
 
 ## Features
 
@@ -26,7 +26,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository to your local machine. 
 
-2. Navigate to the project directory. (Note: the correct directory should be ./studentbase/StudentBaseInternship
+2. Navigate to the project directory. (Note: the correct directory should be ./Voyage/VoyageJobs
 
 3. npm install
 
