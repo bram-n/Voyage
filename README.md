@@ -34,6 +34,7 @@ To run this project locally, follow these steps:
 
 - Kaggle for providing the Data Scientist Jobs dataset.
 - The React and TypeScript communities for their valuable resources and support.
+- Canva for providing free images.
 
 ## Contact
 
