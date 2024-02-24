@@ -6,20 +6,23 @@
     background-color:#f8dcbe;
   }
 
-.logo-div {
+  .logo-div {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 50px;
     font-family: Caivun_9;
-    color:#2F3C7E;
+    color: #2F3C7E;
     text-decoration: none;
     position: absolute;
-    min-width: 100px;
-    max-width: 100px;
-    height: 40px;
-    margin-bottom: 3vh;
-}
+    left: 0; /* Fixed position from the left */
+    top: 0; /* Fixed position from the top */
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 100%; /* Take full height of Navbar */
+    padding: 0 15px; /* Add padding for better alignment */
+  }
+  
 
 .logo{
     width: 100%;
@@ -83,6 +86,8 @@
     /* text-decoration: none; */
     
 }
+
+
 .signup-box-style:hover {
     background-color: var(--Blue, #2F3C7E);
     color: white;
