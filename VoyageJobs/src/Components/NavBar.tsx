@@ -17,9 +17,6 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className = "dropdown-menu"/>
         <Navbar.Collapse id="responsive-navbar-nav" className="custom-collapse">
           <Nav className="me-auto">
-            <NavLink to="/job" className="nav-link text-style">
-              Internship
-            </NavLink>
           </Nav>
           <Nav>
             {isAuthenticated ? (
@@ -30,6 +27,9 @@ export default function NavBar() {
               </>
             ) : (
               <>
+                <NavLink to="/job" className="signup-box-style">
+                  Internship
+                </NavLink>
                 <NavLink to="/signup" className="signup-box-style">
                   Sign Up
                 </NavLink>

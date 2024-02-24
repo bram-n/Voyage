@@ -7,6 +7,15 @@
     overflow: hidden;
   }
 
+@media screen and (max-width: 1000px) {
+    .custom-navbar {
+        overflow: visible;
+    }
+    .custom-collapse {
+        margin-top: 90px;
+    }
+}
+
 .dropdown-menu{
     right:0;
     top: 0 ;
@@ -63,30 +72,6 @@ margin-left: 0; /* Remove the negative margin */
     display: flex;
     align-items: center;
     justify-content: flex-end; 
-}
-
-/* Internship */
-.text-style {
-    color: #2F3C7E;
-    text-align: center;
-    font-family: Karla;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 3vh;
-    text-decoration: none;
-    transition: text-decoration 0.3s;
-    white-space: nowrap; /* Prevent text from wrapping */
-}
-
-
-.text-style:hover {
-    text-decoration: underline;
-}
-
-.text-style:visited{
-    color: #2F3C7E;
 }
 
 .me-auto{

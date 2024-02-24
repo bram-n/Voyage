@@ -3,6 +3,8 @@ import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import "../Aesthetics/signup.css";
+import NavBar from '../Components/NavBar'
+
 
 export default function LoginForm() {
   // States
@@ -36,6 +38,8 @@ export default function LoginForm() {
   };
 
   return (
+    <>
+    <NavBar/>
     <Container className="signup-container">
       <br />
       <Card className="card">
@@ -98,5 +102,6 @@ export default function LoginForm() {
         </Card.Body>
       </Card>
     </Container>
+    </>
   );
 }
