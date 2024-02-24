@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import { Container, Nav } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import JobCard from "../Components/JobCard"; // Assuming the component is in a separate file
 import DataJSON from "../Data/DataJSON.json"; // Adjust the path accordingly
-import Job from "../Data/JobDataType"; // Import the interface
 // import mapJsonToJob from "../Data/MapJsonToJob";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import "../Aesthetics/pagination.css"; // Import the CSS file
 // import { useTable, useFilters } from 'react-table';
 import NavBar from "../Components/NavBar";
@@ -28,12 +27,12 @@ function PaginatedJobItems() {
       "Location"
     ]
   };
-  
+  // @ts-ignore
   const fuse = new Fuse(DataJSON, fuseOptions);
   console.log("world");
   
 
-  const handlePageClick = (selectedPage) => {
+  const handlePageClick = (selectedPage: any) => {
     setCurrentPage(selectedPage.selected);
   };
   // const handleSearch = () => {
@@ -69,6 +68,7 @@ function PaginatedJobItems() {
 const itemsArray = newFiltered.map(item => item.item);
 
 // Set filteredData to the array of "item" values
+// @ts-ignore
 setFilteredData(itemsArray);
 
 setCurrentPage(0);
@@ -115,6 +115,7 @@ console.log(itemsArray);
         </Col>
       </Row>
       {currentData.map((data, index) => (
+        // @ts-ignore
         <JobCard className = "job-card"
           key={index}
           keyIndex={data[""]}

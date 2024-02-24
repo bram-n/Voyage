@@ -1,9 +1,9 @@
-import React from "react";
+
 import "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import NavBar from "../Components/NavBar";
-import { Link, NavLink } from "react-router-dom";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import {  NavLink } from "react-router-dom";
+import { Button, Row, Col } from "react-bootstrap";
 import WebImage from "../assets/Webpage Image.png";
 import "../Aesthetics/HomePage.css";
 export default function Home() {

@@ -1,9 +1,9 @@
-import React from "react";
+
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import "../Aesthetics/NavBarStyle.css";
-import imageLogo from "../assets/Sb-2.png";
+
 
 export default function NavBar() {
   const { currentUser, logout, isAuthenticated } = useAuth();

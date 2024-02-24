@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 
 interface JobDescriptionPage {
@@ -13,7 +12,7 @@ interface JobDescriptionPage {
   sector : string;
 }
 
-function Description({keyIndex, jobTitle, rating, salary, sector, company, location, description}: JobDescriptionPage) {
+function Description({ jobTitle,  company, location, description}: JobDescriptionPage) {
     
     return ( 
         <Card>

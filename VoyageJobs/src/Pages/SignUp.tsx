@@ -6,8 +6,8 @@ import "../Aesthetics/Signup.css";
 
 export default function SignUpForm() {
   // States
-  const [currentUser, setCurrentUser] = useState("");
-  const [username, setUsername] = useState("");
+  // const [currentUser, setCurrentUser] = useState("");
+  // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
