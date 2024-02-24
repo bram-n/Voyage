@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Form, Button, Container } from "react-bootstrap";
+import {  Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Description from "../Components/Description";
 import DataJSON from "../Data/DataJSON.json";
@@ -13,6 +13,7 @@ function DescriptionPage() {
 
   // Find the data based on the id
 
+  //@ts-ignore
   const data = DataJSON[id];
   // Redirect to home if data is not found
   if (!data) {
@@ -24,6 +25,7 @@ function DescriptionPage() {
   // Replace \n with <br> and create an array of React elements
   const textWithHTMLLineBreaks = textWithLineBreaks
     .split("\n")
+    // @ts-ignore
     .map((line, index) => (
       <React.Fragment key={index}>
         {line}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import auth from '../config/firebase';
 import { User } from 'firebase/auth';
@@ -32,7 +32,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // States
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState< User | null>(null)
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
 
   function signup(email: string, password: string) { return createUserWithEmailAndPassword(auth, email, password) }
   function login(email: string, password: string) { return signInWithEmailAndPassword(auth, email, password)}
@@ -41,7 +41,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user: User | null) => {
       setCurrentUser(user);
-      setLoading(false);
+      // setLoading(false);
       setAuthenticated(!!user)
     });
     

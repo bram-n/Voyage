@@ -1,11 +1,11 @@
 // UserProfilePage.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import mockData from "../Data/MockUserProfile.json";
 
 const UserProfilePage = () => {
-  const { currentUser, logout, isAuthenticated } = useAuth();
+  const { currentUser } = useAuth();
 
   // State to manage user data
   const [user, setUser] = useState({
@@ -36,14 +36,14 @@ const UserProfilePage = () => {
   }, [currentUser]);
 
   // Handle form submission to update user data
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: Event) => {
     e.preventDefault();
     // Implement logic to update user data in the database
     console.log("User data updated:", user);
   };
 
   // Handle form field changes
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: any, value: any) => {
     setUser((prevUser) => ({
       ...prevUser,
       [field]: value,
@@ -54,7 +54,7 @@ const UserProfilePage = () => {
     <Container>
       <Row>
         <h2>User Profile</h2>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={() => handleSubmit}>
             {/* name */}
           <Row>
             <Col md={6}>
