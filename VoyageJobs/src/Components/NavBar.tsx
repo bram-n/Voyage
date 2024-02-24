@@ -14,8 +14,8 @@ export default function NavBar() {
         <NavLink to="/" className="logo-div">
           <div className="logo">Voyage</div>
         </NavLink>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className = "dropdown-menu"/>
+        <Navbar.Collapse id="responsive-navbar-nav" className="custom-collapse">
           <Nav className="me-auto">
             <NavLink to="/job" className="nav-link text-style">
               Internship

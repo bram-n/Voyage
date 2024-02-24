@@ -4,7 +4,31 @@
 .custom-navbar {
     height: 100px;  /* Adjust the height as needed */
     background-color:#f8dcbe;
+    overflow: hidden;
   }
+
+.dropdown-menu{
+    right:0;
+    top: 0 ;
+    margin-top: 30px;
+    margin-right: 10px;
+    display: flex;
+    max-width: 10px;
+    justify-content: center;
+}
+
+/* dropdown menu CSS*/
+.navbar-nav {
+    padding: 0; /* Remove any default padding */
+    margin: 0; /* Remove any default margin */
+    background: #f8dcbe; /* Background color */
+  }
+
+.custom-collapse {
+width: 100%; /* Set width to 100% to fit the screen */
+margin-left: 0; /* Remove the negative margin */
+}
+
 
   .logo-div {
     display: flex;
@@ -38,7 +62,7 @@
 .nav-right-side-component {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; 
 }
 
 /* Internship */
@@ -50,12 +74,12 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
-    margin:3vh;
-    margin-left: 810px;
+    margin: 3vh;
     text-decoration: none;
-    transition: text-decoration 0.3s; 
+    transition: text-decoration 0.3s;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
+
 
 .text-style:hover {
     text-decoration: underline;
@@ -65,10 +89,15 @@
     color: #2F3C7E;
 }
 
+.me-auto{
+    width: 30vw;
+}
+
 /*Sign Up Box */
 .signup-box-style {
     text-decoration: none;
-    width: auto  ;
+    width: auto;
+    max-height: 12vh;
     box-sizing: border-box;
     border-radius: 8px;
     border: 2px solid var(--Blue, #2F3C7E);
@@ -80,11 +109,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
-    margin:1vh;
+    margin: 1vw;
     padding: 3vh;
-    /* text-decoration: none; */
-    
 }
 
 
