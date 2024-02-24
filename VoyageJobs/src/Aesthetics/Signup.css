@@ -12,7 +12,7 @@
 }
 
 .signup-container {
-    margin-top: 30vh;
+    margin-top: 20vh;
     width: 40%; /* Adjust width as needed */
     justify-content: center;
     align-items: center;
@@ -70,6 +70,3 @@
     align-items: center;
 }
 
-.have-account-pos{
-    margin-top:-90px;
-}

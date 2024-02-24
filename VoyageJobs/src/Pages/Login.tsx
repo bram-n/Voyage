@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import "../Aesthetics/signup.css";
+import "../Aesthetics/Signup.css";
 import NavBar from '../Components/NavBar'
 
 
@@ -85,7 +85,7 @@ export default function LoginForm() {
               
                 className="signup-button"
               >
-                <h5 className="login-text">Log in</h5>
+                <h5 className="signup-text">Log in</h5>
               </Button>
               <br />
               <div className="notregisteredPosition">
