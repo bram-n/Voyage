@@ -22,6 +22,11 @@ Voyage is a project aimed at simulating the job application process for internsh
 
 ## Getting Started
 
+View our project on Netlify!
+
+[Website Link](https://voyagejobs.netlify.app/)
+
+
 To run this project locally, follow these steps:
 
 1. Clone the repository to your local machine. 
